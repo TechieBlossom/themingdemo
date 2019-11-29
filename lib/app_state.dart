@@ -1,11 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
-class AppState extends ChangeNotifier {
+part 'app_state.g.dart';
 
+@HiveType()
+class AppState {
+
+  @HiveField(0)
   bool isDarkModeOn = false;
 
   void updateTheme(bool isDarkModeOn) {
     this.isDarkModeOn = isDarkModeOn;
-    notifyListeners();
   }
 }
